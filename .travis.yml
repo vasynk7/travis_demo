@@ -1,3 +1,12 @@
-clang -coverage -O0 test.c -o test
-./test
-gcov test.c
+    
+matrix:
+  include:    
+    - language: c  
+      sudo: false # only for faster builds  
+      compiler:
+        - clang
+        - gcc
+      script:  
+        - gcc -o test test.c 
+        - ./test
+      
