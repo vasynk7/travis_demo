@@ -1,5 +1,3 @@
-language: c
-sudo: false # only for faster builds
-script:
-- gcc -o test test.c
-- ./test 
+clang -coverage -O0 test.c -o test
+./test
+gcov test.c
